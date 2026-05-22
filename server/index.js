@@ -11,6 +11,7 @@ import userRoutes from './routes/appUsers.js'
 import subRoutes from './routes/subscriptions.js'
 import varRoutes from './routes/variables.js'
 import webhookRoutes from './routes/webhooks.js'
+import clientRoutes from './routes/client.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -32,6 +33,7 @@ app.use('/api/applications/:appId/users', userRoutes)
 app.use('/api/applications/:appId/subscriptions', subRoutes)
 app.use('/api/applications/:appId/variables', varRoutes)
 app.use('/api/applications/:appId/webhooks', webhookRoutes)
+app.use('/api/client', clientRoutes)
 
 // Serve React frontend in production
 if (isProd) {
